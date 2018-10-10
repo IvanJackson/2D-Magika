@@ -95,7 +95,7 @@ public class Player extends CreatureBase {
         move();
         handler.getGameCamera().centerOnEntity(this);
      
-        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_TAB) || handler.getKeyManager().keyJustPressed(KeyEvent.VK_SHIFT)) {
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_TAB) || handler.getKeyManager().keyJustPressed(KeyEvent.VK_ENTER)) {
         	caveWorld = new CaveWorld(handler,"res/Maps/caveMap.map",this);
         	handler.setWorld(caveWorld);
         }
