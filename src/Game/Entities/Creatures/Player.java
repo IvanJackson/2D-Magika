@@ -7,6 +7,8 @@ import Game.Items.Item;
 import Game.SpellCast.SpellCastUI;
 import Resources.Animation;
 import Resources.Images;
+import Worlds.BaseWorld;
+import Worlds.CaveWorld;
 import Main.Handler;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -18,6 +20,7 @@ import java.awt.image.BufferedImage;
 
 public class Player extends CreatureBase {
 
+	private BaseWorld caveWorld;
     //Animations
     private Animation animDown, animUp, animLeft, animRight,animFireATT,animFireATTR,animFireATTU,animFireATTD;
 
@@ -91,6 +94,11 @@ public class Player extends CreatureBase {
         getInput();
         move();
         handler.getGameCamera().centerOnEntity(this);
+     
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_TAB) || handler.getKeyManager().keyJustPressed(KeyEvent.VK_SHIFT)) {
+        	caveWorld = new CaveWorld(handler,"res/Maps/caveMap.map",this);
+        	handler.setWorld(caveWorld);
+        }
 
         if(!fcactive){
             fcounter++;
@@ -98,7 +106,7 @@ public class Player extends CreatureBase {
         if(fcounter>=60){
             fcounter=0;
             fcactive=true;
-            FireBall=true;
+            FireBall=true;										
 
         }
 
