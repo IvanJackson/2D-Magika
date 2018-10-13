@@ -50,6 +50,7 @@ public class Images {
     public Images() {
 
         SpriteSheet newsheet = new SpriteSheet(Images.loadImage("/Sheets/SpriteSheet.png"));
+        SpriteSheet newsheet2 = new SpriteSheet(Images.loadImage("/Sheets/SpriteSheet2.png"));
         SpriteSheet numsheet = new SpriteSheet(Images.loadImage("/Sheets/numsheet.png"));
         SpriteSheet runesheet = new SpriteSheet(Images.loadImage("/Sheets/runes.png"));
         SpriteSheet FireBallsheet = new SpriteSheet(Images.loadImage("/Sheets/FireBall.png"));
@@ -161,7 +162,8 @@ public class Images {
             particleSmoke[1]= newsheet.crop(129,399,20,35);
             particleSmoke[2]= newsheet.crop(154,400,20,35);
 
-            items[0]= newsheet.crop(114,448,30,24);//log
+            items[0]=newsheet.crop(114,448,30,24);//log
+            items[1]=newsheet2.crop(114,480,23,25);//coin
 
             numbers[1]= numsheet.crop(17,15,17,22);
             numbers[2]= numsheet.crop(64,16,14,19);
