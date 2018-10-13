@@ -31,7 +31,7 @@ public class MoneyBag extends StaticEntity {
         bounds.y=0;
         bounds.width = 64;
         bounds.height = 64;
-        health=16;
+        health=6;
 
         try {
             audioFile = new File("res/music/Pickaxe.wav");
@@ -71,14 +71,14 @@ public class MoneyBag extends StaticEntity {
     @Override
     public void render(Graphics g) {
         renderLife(g);
-        g.drawImage(Images.blocks[14],(int)(x-handler.getGameCamera().getxOffset()),(int)(y-handler.getGameCamera().getyOffset()),width,height,null);
+        g.drawImage(Images.items[2],(int)(x-handler.getGameCamera().getxOffset()),(int)(y-handler.getGameCamera().getyOffset()),width,height,null);
 
     }
 
     @Override
     public void die() {
-    	RNGR=randint.nextInt(3);
-        System.out.println(RNGR);
-    	        handler.getWorld().getItemManager().addItem(Item.coinItem.createNew((int)x + bounds.x,(int)y + bounds.y,RNGR));
+//    	RNGR=randint.nextInt(3);
+//        System.out.println(RNGR);
+    	        handler.getWorld().getItemManager().addItem(Item.coinItem.createNew((int)x + bounds.x,(int)y + bounds.y,1));
     }
 }
