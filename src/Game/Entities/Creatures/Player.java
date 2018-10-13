@@ -95,9 +95,17 @@ public class Player extends CreatureBase {
         move();
         handler.getGameCamera().centerOnEntity(this);
      
+        //going to the cave world
         if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_TAB) || handler.getKeyManager().keyJustPressed(KeyEvent.VK_ENTER)) {
         	caveWorld = new CaveWorld(handler,"res/Maps/caveMap.map",this);
         	handler.setWorld(caveWorld);
+        }
+        
+        //Pressing x gives the player one of each item (1 Wood, Rock, Fire Rune)
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_X)) {
+        	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(new Item(Images.items[0],"Wood",0));
+        	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(new Item(Images.blocks[14],"Rock",1));
+        	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(new Item(Images.Runes[2],"Fire Rune",2));
         }
 
         if(!fcactive){
