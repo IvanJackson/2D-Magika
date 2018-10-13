@@ -77,8 +77,9 @@ public class MoneyBag extends StaticEntity {
 
     @Override
     public void die() {
-//    	RNGR=randint.nextInt(3);
-//        System.out.println(RNGR);
-    	        handler.getWorld().getItemManager().addItem(Item.coinItem.createNew((int)x + bounds.x,(int)y + bounds.y,1));
+    	randint=new Random();
+    	RNGR=randint.nextInt(5);
+        System.out.println(RNGR);
+    	        handler.getWorld().getItemManager().addItem(Item.coinItem.createNew((int)x + bounds.x,(int)y + bounds.y,RNGR));
     }
 }
