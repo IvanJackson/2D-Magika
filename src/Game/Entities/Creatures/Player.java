@@ -100,13 +100,20 @@ public class Player extends CreatureBase {
         	caveWorld = new CaveWorld(handler,"res/Maps/caveMap.map",this);
         	handler.setWorld(caveWorld);
         }
-        
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_P)) {
+        	State.setState(handler.getGame().pauseState);
+        }
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_G)) {
+        	State.setState(handler.getGame().gameOverState);
+        }
         //Pressing x gives the player one of each item (1 Wood, Rock, Fire Rune)
         if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_X)) {
         	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(new Item(Images.items[0],"Wood",0));
         	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(new Item(Images.blocks[14],"Rock",1));
         	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(new Item(Images.Runes[2],"Fire Rune",2));
-//        	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(new Item(Images.items[1], "Coin",3));
+        	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(new Item(Images.items[1], "Coin",3));
+        	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(new Item(Images.items[3], "Key",4));
+//         	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(new Item(Images.blocks[13], "Tree",5));
         }
 
         if(!fcactive){
