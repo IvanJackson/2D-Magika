@@ -78,22 +78,32 @@ public class Inventory {
     //Inventory Methods
     private void renderItems(Graphics g) {
 
-        if (inventoryItems.size() == 1) {
-            g.drawImage(inventoryItems.get(0).getTexture(), 25, 24, inventoryItems.get(0).getWidth(), inventoryItems.get(0).getHeight(), null);
-            g.drawString(String.valueOf(inventoryItems.get(0).getCount()), 25+33,25+35);
-        }else if(inventoryItems.size() == 2) {
-            g.drawImage(inventoryItems.get(0).getTexture(), 25, 24, inventoryItems.get(0).getWidth(), inventoryItems.get(0).getHeight(), null);
-            g.drawString(String.valueOf(inventoryItems.get(0).getCount()), 25+33,25+35);
-            g.drawImage(inventoryItems.get(1).getTexture(), 86, 24, inventoryItems.get(1).getWidth(), inventoryItems.get(1).getHeight(), null);
-            g.drawString(String.valueOf(inventoryItems.get(1).getCount()), 86+33,24+35);
-        }else if(inventoryItems.size() == 3) {
-            g.drawImage(inventoryItems.get(0).getTexture(), 25, 24, inventoryItems.get(0).getWidth(), inventoryItems.get(0).getHeight(), null);
-            g.drawString(String.valueOf(inventoryItems.get(0).getCount()), 25+33,25+35);
-            g.drawImage(inventoryItems.get(1).getTexture(), 86, 24, inventoryItems.get(1).getWidth(), inventoryItems.get(1).getHeight(), null);
-            g.drawString(String.valueOf(inventoryItems.get(1).getCount()), 86+33,24+35);
-            g.drawImage(inventoryItems.get(2).getTexture(), 147, 24, inventoryItems.get(2).getWidth(), inventoryItems.get(2).getHeight(), null);
-            g.drawString(String.valueOf(inventoryItems.get(2).getCount()), 147+33,24+35);
-        }
+    	for (int i =0;i<inventoryItems.size();i++) {
+    		if(i<5) {
+	    		 g.drawImage(inventoryItems.get(i).getTexture(), 22+(i*61), 24, inventoryItems.get(i).getWidth(), inventoryItems.get(i).getHeight(), null);
+	             g.drawString(String.valueOf(inventoryItems.get(i).getCount()), 22+(i*61)+33,25+35);
+    		}
+    		else {
+    			g.drawImage(inventoryItems.get(i).getTexture(), 22+((i-5)*61), 85, inventoryItems.get(i).getWidth(), inventoryItems.get(i).getHeight(), null);
+	             g.drawString(String.valueOf(inventoryItems.get(i).getCount()), 22+((i-5)*61)+33,120);
+    		}
+    	}
+//        if (inventoryItems.size() == 1) {
+//            g.drawImage(inventoryItems.get(0).getTexture(), 25, 24, inventoryItems.get(0).getWidth(), inventoryItems.get(0).getHeight(), null);
+//            g.drawString(String.valueOf(inventoryItems.get(0).getCount()), 25+33,25+35);
+//        }else if(inventoryItems.size() == 2) {
+//            g.drawImage(inventoryItems.get(0).getTexture(), 25, 24, inventoryItems.get(0).getWidth(), inventoryItems.get(0).getHeight(), null);
+//            g.drawString(String.valueOf(inventoryItems.get(0).getCount()), 25+33,25+35);
+//            g.drawImage(inventoryItems.get(1).getTexture(), 86, 24, inventoryItems.get(1).getWidth(), inventoryItems.get(1).getHeight(), null);
+//            g.drawString(String.valueOf(inventoryItems.get(1).getCount()), 86+33,24+35);
+//        }else if(inventoryItems.size() == 3) {
+//            g.drawImage(inventoryItems.get(0).getTexture(), 25, 24, inventoryItems.get(0).getWidth(), inventoryItems.get(0).getHeight(), null);
+//            g.drawString(String.valueOf(inventoryItems.get(0).getCount()), 25+33,25+35);
+//            g.drawImage(inventoryItems.get(1).getTexture(), 86, 24, inventoryItems.get(1).getWidth(), inventoryItems.get(1).getHeight(), null);
+//            g.drawString(String.valueOf(inventoryItems.get(1).getCount()), 86+33,24+35);
+//            g.drawImage(inventoryItems.get(2).getTexture(), 147, 24, inventoryItems.get(2).getWidth(), inventoryItems.get(2).getHeight(), null);
+//            g.drawString(String.valueOf(inventoryItems.get(2).getCount()), 147+33,24+35);
+//        }
 
 
     }
