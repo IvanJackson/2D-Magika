@@ -1,6 +1,7 @@
 package Worlds;
 
 import Game.Entities.Creatures.Player;
+import Game.Entities.Creatures.Humanoid;
 import Game.Entities.Creatures.SkelyEnemy;
 import Game.Entities.Statics.*;
 import Main.Handler;
@@ -29,8 +30,10 @@ public class World1 extends BaseWorld{
         entityManager.addEntity(new Door(handler, 100, 0,caveWorld));
         entityManager.addEntity(new SkelyEnemy(handler, 1250, 500));
 //        entityManager.addEntity(new SkelyEnemy(handler, 300, 300));
-//        entityManager.addEntity(new MoneyBag(handler, 300, 300));
-//        entityManager.addEntity(new MoneyBag(handler, 200, 200));
+        entityManager.addEntity(new MoneyBag(handler, 300, 300));
+        entityManager.addEntity(new MoneyBag(handler, 200, 200));
+        entityManager.addEntity(new Humanoid(handler, 300, 500));
+        
 
         entityManager.getPlayer().setX(spawnX);
         entityManager.getPlayer().setY(spawnY);
