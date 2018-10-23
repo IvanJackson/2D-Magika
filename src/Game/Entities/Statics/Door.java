@@ -69,6 +69,12 @@ public class Door extends StaticEntity {
         }else if(ir.contains(pr) && EP){
             g.drawImage(Images.EP,(int) x+width,(int) y+10,32,32,null);
             g.drawImage(Images.loading,0,0,800,600,null);
+            try {
+				Thread.sleep(120);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
             handler.setWorld(world);
 
         }
