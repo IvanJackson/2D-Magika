@@ -165,6 +165,7 @@ public class Images {
             items[0]=newsheet.crop(114,448,30,24);//log
             items[1]=newsheet2.crop(0,10,25,34);//coin
             items[2]=newsheet2.crop(25,0,43,44);//moneybag
+            items[3]=newsheet2.crop(80, 0, 30, 45);//key
 
             numbers[1]= numsheet.crop(17,15,17,22);
             numbers[2]= numsheet.crop(64,16,14,19);

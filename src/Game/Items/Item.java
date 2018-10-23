@@ -31,6 +31,7 @@ public class Item {
     public static Item rockItem = new Item(Images.blocks[14],"Rock",1);
     public static Item fireRuneItem = new Item(Images.Runes[2],"Fire Rune",2);
     public static Item coinItem = new Item(Images.items[1], "Coin",3);
+    public static Item key = new Item(Images.items[3], "Key",4);
 
 
     //class

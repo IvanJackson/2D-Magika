@@ -106,6 +106,7 @@ public class Player extends CreatureBase {
         	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(new Item(Images.items[0],"Wood",0));
         	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(new Item(Images.blocks[14],"Rock",1));
         	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(new Item(Images.Runes[2],"Fire Rune",2));
+//        	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(new Item(Images.items[1], "Coin",3));
         }
 
         if(!fcactive){
@@ -130,7 +131,7 @@ public class Player extends CreatureBase {
         // Implementing health regeneration
         if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_SHIFT)){
         	if (this.getHealth() < 75) { // if current health lower than 75 (maxHealth)
-        		this.setHealth(this.getHealth()+1);
+        		this.setHealth(this.getHealth()+30);
         	}
         }
 
