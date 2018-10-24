@@ -109,8 +109,6 @@ public class Humanoid extends CreatureBase  {
         }
 
     }
-
-
     @Override
     public void die() {
 

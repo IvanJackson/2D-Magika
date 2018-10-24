@@ -75,7 +75,7 @@ public class Images {
 
         butstart = new BufferedImage[3];
         particleSmoke = new BufferedImage[3];
-        items = new BufferedImage[4];
+        items = new BufferedImage[5];
         numbers = new BufferedImage[21];
         Resume = new BufferedImage[2];
         BTitle = new BufferedImage[2];
@@ -168,6 +168,7 @@ public class Images {
             items[1]=newsheet2.crop(0,10,25,34);//coin
             items[2]=newsheet2.crop(25,0,43,44);//moneybag
             items[3]=newsheet2.crop(80, 0, 30, 45);//key
+            items[4]=newsheet2.crop(117, 0, 42, 49); //potion
 
             numbers[1]= numsheet.crop(17,15,17,22);
             numbers[2]= numsheet.crop(64,16,14,19);
