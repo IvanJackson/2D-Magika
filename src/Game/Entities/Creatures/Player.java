@@ -103,9 +103,9 @@ public class Player extends CreatureBase {
         if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_P)) {
         	State.setState(handler.getGame().pauseState);
         }
-        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_G)) {
-        	State.setState(handler.getGame().gameOverState);
-        }
+//        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_G)) {
+//        	State.setState(handler.getGame().gameOverState);
+//        }
         //Pressing x gives the player one of each item (1 Wood, Rock, Fire Rune)
         if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_X)) {
         	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(new Item(Images.items[0],"Wood",0));
@@ -114,6 +114,14 @@ public class Player extends CreatureBase {
         	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(new Item(Images.items[1], "Coin",3));
         	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(new Item(Images.items[3], "Key",4));
 //         	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(new Item(Images.blocks[13], "Tree",5));
+        }
+//        
+//        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_G)&&handler.getWorld().getEntityManager().getPlayer().getInventory().getInventoryItems().contains(Item.key)) {
+//        	EntityBase e = handler.getWorld().getEntityManager().getEntities().get(7);
+//        	handler.getWorld().getEntityManager().addEntity(e);
+//        }
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_G)) {
+        	handler.getWorld().getEntityManager().addEntity(new Companion(this.handler, 150, 150));
         }
 
         if(!fcactive){
@@ -138,7 +146,13 @@ public class Player extends CreatureBase {
         // Implementing health regeneration
         if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_SHIFT)){
         	if (this.getHealth() < 75) { // if current health lower than 75 (maxHealth)
-        		this.setHealth(this.getHealth()+30);
+        		if(this.getHealth()+30<=75) {
+        			this.setHealth(this.getHealth()+30);
+        		}
+        		else {
+        			int tempHealth = 75 - this.getHealth();
+        			this.setHealth(this.getHealth()+tempHealth);
+        		}
         	}
         }
 
