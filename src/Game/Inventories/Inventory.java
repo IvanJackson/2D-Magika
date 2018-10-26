@@ -20,6 +20,7 @@ public class Inventory {
     private boolean active = false;
     private UIManager uiManager;
     private ArrayList<Item> inventoryItems;
+	int quantity=0;
 
     public Inventory(Handler handler){
 
@@ -105,16 +106,18 @@ public class Inventory {
     }
     
     public int removeItems(int item) {
-    	int quantity=0;
     	for(Item i:inventoryItems) {
     		if(i.getId()==item) {
-    			if(i.getCount()>1) {
-    				quantity = 1;
+    			if(i.getCount()>3) {
+    				quantity = 3;
     			}
+    			else {
+    				quantity=i.getCount();
+    			}
+    			 i.setCount(i.getCount() - quantity);
     			if(i.getCount()<=0){
                     inventoryItems.remove(inventoryItems.indexOf(i));
                 }
-    			  i.setCount(i.getCount() - quantity);
     			return quantity;
     		}
     	}
