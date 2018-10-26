@@ -1,5 +1,5 @@
 package Worlds;
-import Game.Entities.Creatures.Player;
+import Game.Entities.Creatures.*;
 import Game.Entities.Statics.*;
 import Main.Handler;
 
@@ -17,6 +17,7 @@ public class CaveWorld extends BaseWorld{
         world2 = new World2(handler,"res/Maps/map2.map",player);
         
         entityManager.addEntity(new Door(handler, 100, 0,world2));
+        entityManager.addEntity(new SlimeEnemy(handler, 500, 200));
         entityManager.getPlayer().setX(spawnX);
         entityManager.getPlayer().setY(spawnY);
 
