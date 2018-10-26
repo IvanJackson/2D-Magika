@@ -88,23 +88,6 @@ public class Inventory {
 	             g.drawString(String.valueOf(inventoryItems.get(i).getCount()), 22+((i-5)*61)+33,120);
     		}
     	}
-//        if (inventoryItems.size() == 1) {
-//            g.drawImage(inventoryItems.get(0).getTexture(), 25, 24, inventoryItems.get(0).getWidth(), inventoryItems.get(0).getHeight(), null);
-//            g.drawString(String.valueOf(inventoryItems.get(0).getCount()), 25+33,25+35);
-//        }else if(inventoryItems.size() == 2) {
-//            g.drawImage(inventoryItems.get(0).getTexture(), 25, 24, inventoryItems.get(0).getWidth(), inventoryItems.get(0).getHeight(), null);
-//            g.drawString(String.valueOf(inventoryItems.get(0).getCount()), 25+33,25+35);
-//            g.drawImage(inventoryItems.get(1).getTexture(), 86, 24, inventoryItems.get(1).getWidth(), inventoryItems.get(1).getHeight(), null);
-//            g.drawString(String.valueOf(inventoryItems.get(1).getCount()), 86+33,24+35);
-//        }else if(inventoryItems.size() == 3) {
-//            g.drawImage(inventoryItems.get(0).getTexture(), 25, 24, inventoryItems.get(0).getWidth(), inventoryItems.get(0).getHeight(), null);
-//            g.drawString(String.valueOf(inventoryItems.get(0).getCount()), 25+33,25+35);
-//            g.drawImage(inventoryItems.get(1).getTexture(), 86, 24, inventoryItems.get(1).getWidth(), inventoryItems.get(1).getHeight(), null);
-//            g.drawString(String.valueOf(inventoryItems.get(1).getCount()), 86+33,24+35);
-//            g.drawImage(inventoryItems.get(2).getTexture(), 147, 24, inventoryItems.get(2).getWidth(), inventoryItems.get(2).getHeight(), null);
-//            g.drawString(String.valueOf(inventoryItems.get(2).getCount()), 147+33,24+35);
-//        }
-
 
     }
 
@@ -119,7 +102,23 @@ public class Inventory {
             handler.getWorld().getEntityManager().getPlayer().getSpellGUI().addSpell(new FireBallSpell(handler));
         }
         inventoryItems.add(item);
-
+    }
+    
+    public int removeItems(int item) {
+    	int quantity=0;
+    	for(Item i:inventoryItems) {
+    		if(i.getId()==item) {
+    			if(i.getCount()>1) {
+    				quantity = 1;
+    			}
+    			if(i.getCount()<=0){
+                    inventoryItems.remove(inventoryItems.indexOf(i));
+                }
+    			  i.setCount(i.getCount() - quantity);
+    			return quantity;
+    		}
+    	}
+    	return 0;
     }
 
     //GET SET
