@@ -9,8 +9,17 @@ import Main.Handler;
 public class World1 extends BaseWorld{
 
     private BaseWorld caveWorld;
+    public boolean visible= false;
 
-    public World1(Handler handler, String path, Player player){
+    public boolean isVisible() {
+		return visible;
+	}
+
+	public void setVisible(boolean visible) {
+		this.visible = visible;
+	}
+
+	public World1(Handler handler, String path, Player player){
         super(handler,path,player);
         caveWorld = new CaveWorld(handler,"res/Maps/caveMap.map",player);
 
@@ -31,7 +40,9 @@ public class World1 extends BaseWorld{
         entityManager.addEntity(new Potion(handler, 500, 200));
 //        entityManager.addEntity(new Companion(handler, 150, 150));
         
-
+        if(visible) {
+            entityManager.addEntity(new Door(handler, 100, 0,caveWorld));
+        }
         entityManager.getPlayer().setX(spawnX);
         entityManager.getPlayer().setY(spawnY);
     }
