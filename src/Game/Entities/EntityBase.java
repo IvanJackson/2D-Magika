@@ -13,6 +13,7 @@ public abstract class EntityBase {
     //public static final int DEFAULT_HEALTH = 10;
 
     public static final int DEFAULT_HEALTH = 10;
+    public static boolean visible = false;
     protected Handler handler;
     protected float x, y;
     protected int width, height;
@@ -21,6 +22,7 @@ public abstract class EntityBase {
     protected Rectangle bounds;
     protected boolean beinghurt=false;
     protected int count = 0;
+    
 
 
     public EntityBase(Handler handler, float x, float y, int height, int width){

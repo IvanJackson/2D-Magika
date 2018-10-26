@@ -4,6 +4,8 @@ import Main.Handler;
 import Resources.Animation;
 import Resources.Images;
 import Worlds.*;
+import Game.*;
+import Game.Entities.Statics.Door;
 
 import java.awt.*;
 
@@ -66,8 +68,7 @@ public class Humanoid extends CreatureBase  {
         	}
         	else {
                 g.drawString("You may now procede to the next world.",(int) (x-handler.getGameCamera().getxOffset()-200),(int) (y-handler.getGameCamera().getyOffset()-20));
-//                handler.getWorld(World1.setVisible(true));
-//                handler.getWorld().
+               Door.visible=true;
         	}
         }
     }
