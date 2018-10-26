@@ -2,10 +2,8 @@
 
 package Worlds;
 
-import Game.Entities.Creatures.Player;
-import Game.Entities.Creatures.SkelyEnemy;
-import Game.Entities.Statics.Rock;
-import Game.Entities.Statics.Tree;
+import Game.Entities.Creatures.*;
+import Game.Entities.Statics.*;
 import Main.Handler;
 
 public class World2 extends BaseWorld{
@@ -23,5 +21,6 @@ public class World2 extends BaseWorld{
         entityManager.addEntity(new Tree(handler, 533, 276));
         entityManager.getPlayer().setX(800);
         entityManager.getPlayer().setY(800);
+        entityManager.addEntity(new SlimeKing(handler, 100, 350));
     }
 }
