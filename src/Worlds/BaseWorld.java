@@ -1,5 +1,6 @@
 package Worlds;
 
+import Game.Entities.Creatures.Companion;
 import Game.Entities.Creatures.Player;
 import Game.Entities.EntityManager;
 import Game.GameStates.State;
@@ -7,8 +8,8 @@ import Game.Items.ItemManager;
 import Game.Tiles.Tile;
 import Main.Handler;
 import Resources.Utils;
-
 import java.awt.*;
+import java.awt.event.KeyEvent;
 
 /**
  * Created by Elemental on 2/10/2017.
@@ -39,6 +40,7 @@ public class BaseWorld {
 
     }
 
+    
     public void tick(){
         entityManager.tick();
         itemManager.tick();
@@ -52,6 +54,15 @@ public class BaseWorld {
             countP=0;
             State.setState(handler.getGame().pauseState);
         }
+        
+
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_G)) {
+        	handler.getWorld().getEntityManager().addEntity(new Companion(handler, handler.getWorld().getEntityManager().getPlayer().getX()-50, handler.getWorld().getEntityManager().getPlayer().getY()));
+        }
+        
+//      if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_G)&&handler.getWorld().getEntityManager().getPlayer().getInventory().getInventoryItems().contains(Item.key)) {
+//    		handler.getWorld().getEntityManager().addEntity(new Companion(handler, handler.getWorld().getEntityManager().getPlayer().getX()-50, handler.getWorld().getEntityManager().getPlayer().getY()));
+//    }
     }
 
     public void render(Graphics g){
