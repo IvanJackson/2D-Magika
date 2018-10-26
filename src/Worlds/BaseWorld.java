@@ -56,11 +56,6 @@ public class BaseWorld {
             State.setState(handler.getGame().pauseState);
         }
         
-
-        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_G)) {
-        	handler.getWorld().getEntityManager().addEntity(new Companion(handler, handler.getWorld().getEntityManager().getPlayer().getX()-50, handler.getWorld().getEntityManager().getPlayer().getY()));
-        }
-        
       if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_G)&&handler.getWorld().getEntityManager().getPlayer().getInventory().getInventoryItems().contains(Item.diamond)) {
     		handler.getWorld().getEntityManager().addEntity(new Companion(handler, handler.getWorld().getEntityManager().getPlayer().getX()-50, handler.getWorld().getEntityManager().getPlayer().getY()));
       }
