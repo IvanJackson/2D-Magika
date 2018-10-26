@@ -54,8 +54,9 @@ public abstract class EntityBase {
                 count = 0;
                 beinghurt=false;
             }
-
-            g.drawImage(Images.numbers[getHealth()],(int)(x-handler.getGameCamera().getxOffset()+bounds.x),(int)(y-handler.getGameCamera().getyOffset()-getHeight()+(bounds.height/3)),42,42,null);
+            if(this.getHealth()>=0) {
+            	g.drawImage(Images.numbers[getHealth()],(int)(x-handler.getGameCamera().getxOffset()+bounds.x),(int)(y-handler.getGameCamera().getyOffset()-getHeight()+(bounds.height/3)),42,42,null);
+            }
             count++;
 
         }
