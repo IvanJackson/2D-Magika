@@ -24,6 +24,7 @@ public class Images {
     public static BufferedImage[] SkelyEnemy_left;
     public static BufferedImage[] SkelyEnemy_front;
     public static BufferedImage[] SkelyEnemy_back;
+    public static BufferedImage[] slime;
     public static BufferedImage[] butstart;
     public static BufferedImage[] particleSmoke;
     public static BufferedImage[] items;
@@ -52,6 +53,7 @@ public class Images {
 
         SpriteSheet newsheet = new SpriteSheet(Images.loadImage("/Sheets/SpriteSheet.png"));
         SpriteSheet newsheet2 = new SpriteSheet(Images.loadImage("/Sheets/SpriteSheet2.png"));
+        SpriteSheet slimesheet = new SpriteSheet(Images.loadImage("/Sheets/slime.png"));
         SpriteSheet numsheet = new SpriteSheet(Images.loadImage("/Sheets/numsheet.png"));
         SpriteSheet runesheet = new SpriteSheet(Images.loadImage("/Sheets/runes.png"));
         SpriteSheet FireBallsheet = new SpriteSheet(Images.loadImage("/Sheets/FireBall.png"));
@@ -73,9 +75,13 @@ public class Images {
         SkelyEnemy_front = new BufferedImage[4];
         SkelyEnemy_back = new BufferedImage[4];
 
+        
+        //Slime
+        
+        slime = new BufferedImage[4];
         butstart = new BufferedImage[3];
         particleSmoke = new BufferedImage[3];
-        items = new BufferedImage[5];
+        items = new BufferedImage[6];
         numbers = new BufferedImage[21];
         Resume = new BufferedImage[2];
         BTitle = new BufferedImage[2];
@@ -169,6 +175,7 @@ public class Images {
             items[2]=newsheet2.crop(25,0,43,44);//moneybag
             items[3]=newsheet2.crop(80, 0, 30, 45);//key
             items[4]=newsheet2.crop(117, 0, 42, 49); //potion
+            items[5]=newsheet2.crop(162, 0, 59, 47); //diamond
 
             numbers[1]= numsheet.crop(17,15,17,22);
             numbers[2]= numsheet.crop(64,16,14,19);
@@ -251,6 +258,11 @@ public class Images {
             SkelyEnemy_back[2]=newsheet.crop(196,227+130,width,height);
             SkelyEnemy_back[3]=newsheet.crop(228,227+130,28,height);
 
+            //Slime anim
+            slime[0]= slimesheet.crop(49, 4, 43, 37);
+            slime[1] = slimesheet.crop(0, 6, 44, 43);
+            slime[2] = slime[0];
+            slime[3] = slimesheet.crop(98, 1, 40, 45);
         } catch (IOException e) {
             e.printStackTrace();
         }

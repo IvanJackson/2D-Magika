@@ -33,6 +33,7 @@ public class Item {
     public static Item coinItem = new Item(Images.items[1], "Coin",3);
     public static Item key = new Item(Images.items[3], "Key",4);
     public static Item potion = new Item(Images.items[4], "Potion", 5);
+    public static Item diamond = new Item(Images.items[5], "Diamond", 6);
 //    public static Item tree = new Item(Images.blocks[13], "Tree",5);
 
 
