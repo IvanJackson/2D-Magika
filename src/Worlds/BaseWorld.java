@@ -4,6 +4,7 @@ import Game.Entities.Creatures.Companion;
 import Game.Entities.Creatures.Player;
 import Game.Entities.EntityManager;
 import Game.GameStates.State;
+import Game.Items.Item;
 import Game.Items.ItemManager;
 import Game.Tiles.Tile;
 import Main.Handler;
@@ -60,9 +61,9 @@ public class BaseWorld {
         	handler.getWorld().getEntityManager().addEntity(new Companion(handler, handler.getWorld().getEntityManager().getPlayer().getX()-50, handler.getWorld().getEntityManager().getPlayer().getY()));
         }
         
-//      if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_G)&&handler.getWorld().getEntityManager().getPlayer().getInventory().getInventoryItems().contains(Item.key)) {
-//    		handler.getWorld().getEntityManager().addEntity(new Companion(handler, handler.getWorld().getEntityManager().getPlayer().getX()-50, handler.getWorld().getEntityManager().getPlayer().getY()));
-//    }
+      if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_G)&&handler.getWorld().getEntityManager().getPlayer().getInventory().getInventoryItems().contains(Item.diamond)) {
+    		handler.getWorld().getEntityManager().addEntity(new Companion(handler, handler.getWorld().getEntityManager().getPlayer().getX()-50, handler.getWorld().getEntityManager().getPlayer().getY()));
+      }
     }
 
     public void render(Graphics g){
