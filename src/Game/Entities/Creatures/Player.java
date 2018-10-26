@@ -7,8 +7,7 @@ import Game.Items.Item;
 import Game.SpellCast.SpellCastUI;
 import Resources.Animation;
 import Resources.Images;
-import Worlds.BaseWorld;
-import Worlds.CaveWorld;
+import Worlds.*;
 import Main.Handler;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -21,6 +20,8 @@ import java.awt.image.BufferedImage;
 public class Player extends CreatureBase {
 
 	private BaseWorld caveWorld;
+	private BaseWorld world1;
+	private BaseWorld world2;
     //Animations
     private Animation animDown, animUp, animLeft, animRight,animFireATT,animFireATTR,animFireATTU,animFireATTD;
 
@@ -47,10 +48,9 @@ public class Player extends CreatureBase {
     private int FireSpeed = 2;
     private int FireMove = 0;
     private int movexp,moveyp,movexn,moveyn,tempmoveyp,tempmovexn,tempmoveyn,tempmovexp,fy,fx;
+    public int counter =0;
 
     //spells
-
-
 
     public Player(Handler handler, float x, float y) {
         super(handler, x, y, CreatureBase.DEFAULT_CREATURE_WIDTH, CreatureBase.DEFAULT_CREATURE_HEIGHT);
@@ -89,16 +89,30 @@ public class Player extends CreatureBase {
         animFireATTD.tick();
 
 
-
         //Movement
         getInput();
         move();
         handler.getGameCamera().centerOnEntity(this);
-     
+        
         //going to the cave world
         if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_TAB) || handler.getKeyManager().keyJustPressed(KeyEvent.VK_ENTER)) {
+        	counter++;
+        	world1 = new World1(handler,"res/Maps/map1.map",this);
         	caveWorld = new CaveWorld(handler,"res/Maps/caveMap.map",this);
-        	handler.setWorld(caveWorld);
+        	world2 = new World2(handler,"res/Maps/map2.map",this);
+        	System.out.println(counter);
+        	switch(counter) {
+        	case 1:
+        		handler.setWorld(caveWorld);
+        		break;
+        	case 2:
+        		handler.setWorld(world2);
+        		break;
+        	case 3:
+        		handler.setWorld(world1);
+        		counter=0;
+        		break;
+        	}
         }
         if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_P)) {
         	State.setState(handler.getGame().pauseState);
