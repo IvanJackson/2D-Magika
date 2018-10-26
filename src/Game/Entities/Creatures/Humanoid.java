@@ -3,6 +3,7 @@ package Game.Entities.Creatures;
 import Main.Handler;
 import Resources.Animation;
 import Resources.Images;
+import Worlds.*;
 
 import java.awt.*;
 
@@ -15,7 +16,7 @@ public class Humanoid extends CreatureBase  {
     private Animation animDown, animUp, animLeft, animRight;
 
     boolean done = false;
-    int neededKeys = 1;
+	int neededKeys = 1;
     int neededCoins = 3;
     private int animWalkingSpeed = 150;
 
@@ -65,6 +66,8 @@ public class Humanoid extends CreatureBase  {
         	}
         	else {
                 g.drawString("You may now procede to the next world.",(int) (x-handler.getGameCamera().getxOffset()-200),(int) (y-handler.getGameCamera().getyOffset()-20));
+//                handler.getWorld(World1.setVisible(true));
+//                handler.getWorld().
         	}
         }
     }
