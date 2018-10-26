@@ -9,8 +9,7 @@ import Main.Handler;
 public class World1 extends BaseWorld{
 
     private BaseWorld caveWorld;
-
-    public World1(Handler handler, String path, Player player){
+	public World1(Handler handler, String path, Player player){
         super(handler,path,player);
         caveWorld = new CaveWorld(handler,"res/Maps/caveMap.map",player);
 
@@ -30,8 +29,6 @@ public class World1 extends BaseWorld{
         entityManager.addEntity(new Humanoid(handler, 600,50));
         entityManager.addEntity(new Potion(handler, 500, 200));
 //        entityManager.addEntity(new Companion(handler, 150, 150));
-        
-
         entityManager.getPlayer().setX(spawnX);
         entityManager.getPlayer().setY(spawnY);
     }
