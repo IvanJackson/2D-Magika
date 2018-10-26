@@ -60,7 +60,7 @@ public class Player extends CreatureBase {
         bounds.width=16*2;
         bounds.height=14*2;
         health=75;
-        attack=2;
+        attack=3;
 
 
         animDown = new Animation(animWalkingSpeed,Images.player_front);
@@ -103,9 +103,9 @@ public class Player extends CreatureBase {
         if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_P)) {
         	State.setState(handler.getGame().pauseState);
         }
-//        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_G)) {
-//        	State.setState(handler.getGame().gameOverState);
-//        }
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_Z)) {
+        	State.setState(handler.getGame().gameOverState);
+        }
         //Pressing x gives the player one of each item (1 Wood, Rock, Fire Rune)
         if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_X)) {
         	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(new Item(Images.items[0],"Wood",0));
@@ -115,15 +115,7 @@ public class Player extends CreatureBase {
         	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(new Item(Images.items[3], "Key",4));
 //         	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(new Item(Images.blocks[13], "Tree",5));
         }
-//        
-//        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_G)&&handler.getWorld().getEntityManager().getPlayer().getInventory().getInventoryItems().contains(Item.key)) {
-//        	EntityBase e = handler.getWorld().getEntityManager().getEntities().get(7);
-//        	handler.getWorld().getEntityManager().addEntity(e);
-//        }
-        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_G)) {
-        	handler.getWorld().getEntityManager().addEntity(new Companion(this.handler, 150, 150));
-        }
-
+       
         if(!fcactive){
             fcounter++;
         }
