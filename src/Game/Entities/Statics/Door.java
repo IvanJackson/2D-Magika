@@ -79,6 +79,7 @@ public class Door extends StaticEntity {
 				}
 	            handler.setWorld(world);
 	        }
+	        visible = false;
     	}
     }
 

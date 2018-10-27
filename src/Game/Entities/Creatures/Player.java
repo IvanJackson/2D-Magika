@@ -127,7 +127,7 @@ public class Player extends CreatureBase {
         	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(new Item(Images.Runes[2],"Fire Rune",2));
         	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(new Item(Images.items[1], "Coin",3));
         	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(new Item(Images.items[3], "Key",4));
-//         	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(new Item(Images.blocks[13], "Tree",5));
+         	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(new Item(Images.items[5], "Diamond", 6));
         }
        
         if(!fcactive){

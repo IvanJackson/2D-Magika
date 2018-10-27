@@ -20,6 +20,7 @@ public class CaveWorld extends BaseWorld{
         entityManager.addEntity(new SlimeEnemy(handler, 500, 200));
         entityManager.getPlayer().setX(spawnX);
         entityManager.getPlayer().setY(spawnY);
+        entityManager.addEntity(new Humanoid2(handler, 600,50));
 
     }
 
