@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class Inventory {
 
     private Handler handler;
-    private static boolean active = false;
+    private boolean active = false;
     private UIManager uiManager;
     private ArrayList<Item> inventoryItems;
     public static boolean companionable;
