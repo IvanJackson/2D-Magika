@@ -4,6 +4,7 @@ import Game.Entities.Creatures.Companion;
 import Game.Entities.Creatures.Player;
 import Game.Entities.EntityManager;
 import Game.GameStates.State;
+import Game.Inventories.Inventory;
 import Game.Items.Item;
 import Game.Items.ItemManager;
 import Game.Tiles.Tile;
@@ -56,7 +57,7 @@ public class BaseWorld {
             State.setState(handler.getGame().pauseState);
         }
         
-      if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_G)&&handler.getWorld().getEntityManager().getPlayer().getInventory().getInventoryItems().contains(Item.diamond)) {
+      if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_G) && Inventory.isCompanionable()) {
     		handler.getWorld().getEntityManager().addEntity(new Companion(handler, handler.getWorld().getEntityManager().getPlayer().getX()-50, handler.getWorld().getEntityManager().getPlayer().getY()));
       }
     }

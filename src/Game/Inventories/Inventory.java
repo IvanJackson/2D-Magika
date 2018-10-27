@@ -17,9 +17,10 @@ import java.util.ArrayList;
 public class Inventory {
 
     private Handler handler;
-    private boolean active = false;
+    private static boolean active = false;
     private UIManager uiManager;
     private ArrayList<Item> inventoryItems;
+    public static boolean companionable;
 	int quantity=0;
 
     public Inventory(Handler handler){
@@ -59,7 +60,7 @@ public class Inventory {
 
     }
 
-    public void render(Graphics g) {
+	public void render(Graphics g) {
 
         if(!active){
             uiManager.isActive(uiManager.getObjects(),false);
@@ -102,6 +103,9 @@ public class Inventory {
         if(item.getId()==2){
             handler.getWorld().getEntityManager().getPlayer().getSpellGUI().addSpell(new FireBallSpell(handler));
         }
+        if (item.getId() == 6) {
+        	companionable=true;
+        }
         inventoryItems.add(item);
     }
     
@@ -140,4 +144,8 @@ public class Inventory {
     public void setActive(boolean active) {
         this.active = active;
     }
+    
+    public static boolean isCompanionable() {
+		return companionable;
+	}
 }
