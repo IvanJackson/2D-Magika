@@ -60,7 +60,7 @@ public class Player extends CreatureBase {
         bounds.width=16*2;
         bounds.height=14*2;
         health=75;
-        attack=3;
+        attack=4;
 
 
         animDown = new Animation(animWalkingSpeed,Images.player_front);
@@ -188,10 +188,7 @@ public class Player extends CreatureBase {
             FireBallAttack(g);
 
         }
-
-
-
-
+        
         g.setColor(Color.BLACK);
         g.drawRect((int)(x-handler.getGameCamera().getxOffset()-1),(int)(y-handler.getGameCamera().getyOffset()-21),76,11);
         if(this.getHealth()>50){
@@ -209,9 +206,6 @@ public class Player extends CreatureBase {
         }
         g.setColor(Color.white);
         g.drawString("Health: " + getHealth(),(int)(x-handler.getGameCamera().getxOffset()),(int)(y-handler.getGameCamera().getyOffset()-10));
-
-
-
     }
 
     public void readyFireAttack(){

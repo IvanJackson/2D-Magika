@@ -23,6 +23,7 @@ public class SkelyEnemy extends CreatureBase  {
     private int animWalkingSpeed = 150;
     private Inventory Skelyinventory;
     private Rectangle SkelyCam;
+    private int RNGR = 0;
 
     private int healthcounter =0;
 
@@ -183,6 +184,8 @@ public class SkelyEnemy extends CreatureBase  {
             g.setColor(Color.white);
             g.drawString("SkelyHealth: " + getHealth(),(int) (x-handler.getGameCamera().getxOffset()),(int) (y-handler.getGameCamera().getyOffset()-20));
         }
+        
+        
     }
 
 
@@ -190,7 +193,9 @@ public class SkelyEnemy extends CreatureBase  {
 
     @Override
     public void die() {
-
+    	randint=new Random();
+    	RNGR=randint.nextInt(3);
+    	 handler.getWorld().getItemManager().addItem(Item.coinItem.createNew((int)x + bounds.x,(int)y + bounds.y,RNGR));
     	 handler.getWorld().getItemManager().addItem(Item.key.createNew((int)x + bounds.x,(int)y + bounds.y,1));
     }
 }

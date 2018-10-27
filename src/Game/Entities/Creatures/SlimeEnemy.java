@@ -37,7 +37,8 @@ public class SlimeEnemy extends CreatureBase  {
         bounds.width=16*2;
         bounds.height=14*2;
         speed=1.5f;
-        health=30;
+        health=15;
+        attack = 8;
 
         SkelyCam= new Rectangle();
 

@@ -70,8 +70,7 @@ public class Potion extends StaticEntity {
     @Override
     public void die() {
     	if (handler.getWorld().getEntityManager().getPlayer().getHealth() <=65) {
-    		handler.getWorld().getEntityManager().getPlayer().setHealth(handler.getWorld().getEntityManager().getPlayer().getHealth()+10);
-        	handler.getWorld().getItemManager().addItem(Item.potion.createNew((int)x + bounds.x,(int)y + bounds.y,1));
+    		handler.getWorld().getEntityManager().getPlayer().setHealth(handler.getWorld().getEntityManager().getPlayer().getHealth()+20);
     	}
     }
 }
