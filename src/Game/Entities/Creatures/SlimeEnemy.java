@@ -192,6 +192,6 @@ public class SlimeEnemy extends CreatureBase  {
     @Override
     public void die() {
 
-    	 handler.getWorld().getItemManager().addItem(Item.diamond.createNew((int)x + bounds.x,(int)y + bounds.y,1));
+    	 handler.getWorld().getItemManager().addItem(Item.diamond.createNew((int)x + bounds.x,(int)y + bounds.y,2));
     }
 }
