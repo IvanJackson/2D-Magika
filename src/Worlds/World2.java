@@ -15,12 +15,17 @@ public class World2 extends BaseWorld{
         this.handler = handler;
         this.player=player;
 
-        entityManager.addEntity(new SkelyEnemy(handler, 300, 300));
-        entityManager.addEntity(new Tree(handler, 100, 250));
-        entityManager.addEntity(new Rock(handler, 100, 450));
-        entityManager.addEntity(new Tree(handler, 533, 276));
         entityManager.getPlayer().setX(100);
         entityManager.getPlayer().setY(100);
+        entityManager.addEntity(new Companion(handler,50,50));
         entityManager.addEntity(new SlimeKing(handler, 100, 350));
+        entityManager.addEntity(new Potion(handler, 150, 150));
+        entityManager.addEntity(new Potion(handler, 60, 320));
+        entityManager.addEntity(new Potion(handler, 400, 700));
+        entityManager.addEntity(new Potion(handler, 200, 40));
+        entityManager.addEntity(new Potion(handler, 300, 200));
+        entityManager.addEntity(new Potion(handler, 400, 500));
+        entityManager.addEntity(new Potion(handler, 500, 200));
+        entityManager.addEntity(new Potion(handler, 600, 300));
     }
 }

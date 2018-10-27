@@ -38,7 +38,8 @@ public class SlimeKing extends CreatureBase  {
         bounds.width=16*2;
         bounds.height=14*2;
         speed=1.5f;
-        health=10;
+        health=125;
+        attack=10;
 
         SkelyCam= new Rectangle();
 

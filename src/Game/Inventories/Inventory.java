@@ -74,7 +74,6 @@ public class Inventory {
         g.setColor(Color.white);
         renderItems(g);
 
-
     }
 
     //Inventory Methods
