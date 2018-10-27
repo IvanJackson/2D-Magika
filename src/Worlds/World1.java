@@ -29,8 +29,8 @@ public class World1 extends BaseWorld{
         entityManager.addEntity(new Humanoid(handler, 600,50));
         entityManager.addEntity(new Potion(handler, 500, 200));
 //        entityManager.addEntity(new Companion(handler, 150, 150));
-        entityManager.getPlayer().setX(spawnX);
-        entityManager.getPlayer().setY(spawnY);
+        entityManager.getPlayer().setX(100);
+        entityManager.getPlayer().setY(100);
     }
 
 }
